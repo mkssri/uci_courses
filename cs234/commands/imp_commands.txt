@@ -1,1 +1,0 @@
-sudo mn --custom templates/fat_tree_2.py --topo mytopo --custom sflow-rt/extras/sflow.py --link tc,bw=10
