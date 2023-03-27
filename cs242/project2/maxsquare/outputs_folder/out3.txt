@@ -1,0 +1,292 @@
+mksriram@circinus-34 11:19:33 ~/cs242/hw2/maxsquare 
+$ ./main 
+Matrix(row*col) - 50*50
+Naive Matix Transpose(Sequential) Exec time: 0.000012 seconds
+Matix Transpose(Sequential) Exec time: 0.000009 seconds
+Matix Transpose(Multithreaded) unoptimized out-of-place Exec time: 0.003730 seconds
+
+To Test Accuracy 
+Naive vs sequential mat transpose: equal 
+Naive vs multithreaded mat transpose: equal 
+
+
+Matrix(row*col) - 100*100
+Naive Matix Transpose(Sequential) Exec time: 0.000052 seconds
+Matix Transpose(Sequential) Exec time: 0.000037 seconds
+Matix Transpose(Multithreaded) unoptimized out-of-place Exec time: 0.001691 seconds
+
+To Test Accuracy 
+Naive vs sequential mat transpose: equal 
+Naive vs multithreaded mat transpose: equal 
+
+
+Matrix(row*col) - 250*250
+Naive Matix Transpose(Sequential) Exec time: 0.000333 seconds
+Matix Transpose(Sequential) Exec time: 0.000241 seconds
+Matix Transpose(Multithreaded) unoptimized out-of-place Exec time: 0.001539 seconds
+
+To Test Accuracy 
+Naive vs sequential mat transpose: equal 
+Naive vs multithreaded mat transpose: equal 
+
+
+Matrix(row*col) - 500*500
+Naive Matix Transpose(Sequential) Exec time: 0.001176 seconds
+Matix Transpose(Sequential) Exec time: 0.000986 seconds
+Matix Transpose(Multithreaded) unoptimized out-of-place Exec time: 0.001861 seconds
+
+To Test Accuracy 
+Naive vs sequential mat transpose: equal 
+Naive vs multithreaded mat transpose: equal 
+
+
+Matrix(row*col) - 1000*1000
+Naive Matix Transpose(Sequential) Exec time: 0.006035 seconds
+Matix Transpose(Sequential) Exec time: 0.005088 seconds
+Matix Transpose(Multithreaded) unoptimized out-of-place Exec time: 0.003626 seconds
+
+To Test Accuracy 
+Naive vs sequential mat transpose: equal 
+Naive vs multithreaded mat transpose: equal 
+
+
+Matrix(row*col) - 1500*1500
+Naive Matix Transpose(Sequential) Exec time: 0.014811 seconds
+Matix Transpose(Sequential) Exec time: 0.013120 seconds
+Matix Transpose(Multithreaded) unoptimized out-of-place Exec time: 0.004641 seconds
+
+To Test Accuracy 
+Naive vs sequential mat transpose: equal 
+Naive vs multithreaded mat transpose: equal 
+
+
+Matrix(row*col) - 2000*2000
+Naive Matix Transpose(Sequential) Exec time: 0.023216 seconds
+Matix Transpose(Sequential) Exec time: 0.018377 seconds
+Matix Transpose(Multithreaded) unoptimized out-of-place Exec time: 0.008570 seconds
+
+To Test Accuracy 
+Naive vs sequential mat transpose: equal 
+Naive vs multithreaded mat transpose: equal 
+
+
+Matrix(row*col) - 2500*2500
+Naive Matix Transpose(Sequential) Exec time: 0.042192 seconds
+Matix Transpose(Sequential) Exec time: 0.036624 seconds
+Matix Transpose(Multithreaded) unoptimized out-of-place Exec time: 0.014391 seconds
+
+To Test Accuracy 
+Naive vs sequential mat transpose: equal 
+Naive vs multithreaded mat transpose: equal 
+
+
+Matrix(row*col) - 3000*3000
+Naive Matix Transpose(Sequential) Exec time: 0.060255 seconds
+Matix Transpose(Sequential) Exec time: 0.045751 seconds
+Matix Transpose(Multithreaded) unoptimized out-of-place Exec time: 0.018113 seconds
+
+To Test Accuracy 
+Naive vs sequential mat transpose: equal 
+Naive vs multithreaded mat transpose: equal 
+
+
+Matrix(row*col) - 5000*5000
+Naive Matix Transpose(Sequential) Exec time: 0.174283 seconds
+Matix Transpose(Sequential) Exec time: 0.133820 seconds
+Matix Transpose(Multithreaded) unoptimized out-of-place Exec time: 0.034951 seconds
+
+To Test Accuracy 
+Naive vs sequential mat transpose: equal 
+Naive vs multithreaded mat transpose: equal 
+
+
+Matrix(row*col) - 10000*10000
+Naive Matix Transpose(Sequential) Exec time: 0.638776 seconds
+Matix Transpose(Sequential) Exec time: 0.495639 seconds
+Matix Transpose(Multithreaded) unoptimized out-of-place Exec time: 0.155883 seconds
+
+To Test Accuracy 
+Naive vs sequential mat transpose: equal 
+Naive vs multithreaded mat transpose: equal 
+
+
+Matrix(row*col) - 15000*15000
+Naive Matix Transpose(Sequential) Exec time: 1.641751 seconds
+Matix Transpose(Sequential) Exec time: 1.215349 seconds
+Matix Transpose(Multithreaded) unoptimized out-of-place Exec time: 0.651717 seconds
+
+To Test Accuracy 
+Naive vs sequential mat transpose: equal 
+Naive vs multithreaded mat transpose: equal 
+
+
+Matrix(row*col) - 64*48
+Matix Transpose(Using cycles) Exec time: 0.000247 seconds
+Updated Matix Transpose(Using cycles) Exec time: 0.000238 seconds
+Matix Transpose in-place(Using Multithreaded) unoptimized Exec time: 0.000311 seconds
+Matix Transpose out-of-place (Multithreaded, cache-friendly) by blocks Exec time: 0.000606 seconds
+
+To Test Accuracy 
+Naive vs update mat transpose w/ cycles: equal 
+Naive vs multithreaded mat transpose(in-place): equal 
+Naive vs multithreaded mat transpose w/ blocks(out-of-place): equal 
+
+
+Matrix(row*col) - 112*80
+Matix Transpose(Using cycles) Exec time: 0.001935 seconds
+Updated Matix Transpose(Using cycles) Exec time: 0.001025 seconds
+Matix Transpose in-place(Using Multithreaded) unoptimized Exec time: 0.000952 seconds
+Matix Transpose out-of-place (Multithreaded, cache-friendly) by blocks Exec time: 0.000045 seconds
+
+To Test Accuracy 
+Naive vs update mat transpose w/ cycles: equal 
+Naive vs multithreaded mat transpose(in-place): equal 
+Naive vs multithreaded mat transpose w/ blocks(out-of-place): equal 
+
+
+Matrix(row*col) - 272*256
+Matix Transpose(Using cycles) Exec time: 0.008807 seconds
+Updated Matix Transpose(Using cycles) Exec time: 0.008693 seconds
+Matix Transpose in-place(Using Multithreaded) unoptimized Exec time: 0.008389 seconds
+Matix Transpose out-of-place (Multithreaded, cache-friendly) by blocks Exec time: 0.000455 seconds
+
+To Test Accuracy 
+Naive vs update mat transpose w/ cycles: equal 
+Naive vs multithreaded mat transpose(in-place): equal 
+Naive vs multithreaded mat transpose w/ blocks(out-of-place): equal 
+
+
+Matrix(row*col) - 496*480
+Matix Transpose(Using cycles) Exec time: 0.035145 seconds
+Updated Matix Transpose(Using cycles) Exec time: 0.034214 seconds
+Matix Transpose in-place(Using Multithreaded) unoptimized Exec time: 0.032405 seconds
+Matix Transpose out-of-place (Multithreaded, cache-friendly) by blocks Exec time: 0.002041 seconds
+
+To Test Accuracy 
+Naive vs update mat transpose w/ cycles: equal 
+Naive vs multithreaded mat transpose(in-place): equal 
+Naive vs multithreaded mat transpose w/ blocks(out-of-place): equal 
+
+
+Matrix(row*col) - 864*896
+Matix Transpose(Using cycles) Exec time: 0.131649 seconds
+Updated Matix Transpose(Using cycles) Exec time: 0.127742 seconds
+Matix Transpose in-place(Using Multithreaded) unoptimized Exec time: 0.120752 seconds
+Matix Transpose out-of-place (Multithreaded, cache-friendly) by blocks Exec time: 0.005051 seconds
+
+To Test Accuracy 
+Naive vs update mat transpose w/ cycles: equal 
+Naive vs multithreaded mat transpose(in-place): equal 
+Naive vs multithreaded mat transpose w/ blocks(out-of-place): equal 
+
+
+Matrix(row*col) - 1008*1104
+Matix Transpose(Using cycles) Exec time: 0.189318 seconds
+Updated Matix Transpose(Using cycles) Exec time: 0.181270 seconds
+Matix Transpose in-place(Using Multithreaded) unoptimized Exec time: 0.179542 seconds
+Matix Transpose out-of-place (Multithreaded, cache-friendly) by blocks Exec time: 0.006473 seconds
+
+To Test Accuracy 
+Naive vs update mat transpose w/ cycles: equal 
+Naive vs multithreaded mat transpose(in-place): equal 
+Naive vs multithreaded mat transpose w/ blocks(out-of-place): equal 
+
+
+Matrix(row*col) - 3008*2896
+Matix Transpose(Using cycles) Exec time: 1.644519 seconds
+Updated Matix Transpose(Using cycles) Exec time: 1.628517 seconds
+Matix Transpose in-place(Using Multithreaded) unoptimized Exec time: 1.532082 seconds
+Matix Transpose out-of-place (Multithreaded, cache-friendly) by blocks Exec time: 0.038302 seconds
+
+To Test Accuracy 
+Naive vs update mat transpose w/ cycles: equal 
+Naive vs multithreaded mat transpose(in-place): equal 
+Naive vs multithreaded mat transpose w/ blocks(out-of-place): equal 
+
+
+Matrix(row*col) - 5008*4912
+Matix Transpose(Using cycles) Exec time: 3.497900 seconds
+Updated Matix Transpose(Using cycles) Exec time: 3.107759 seconds
+Matix Transpose in-place(Using Multithreaded) unoptimized Exec time: 3.184147 seconds
+Matix Transpose out-of-place (Multithreaded, cache-friendly) by blocks Exec time: 0.108506 seconds
+
+To Test Accuracy 
+Naive vs update mat transpose w/ cycles: equal 
+Naive vs multithreaded mat transpose(in-place): equal 
+Naive vs multithreaded mat transpose w/ blocks(out-of-place): equal 
+
+
+Matrix(row*col) - 7504*7488
+Matix Transpose(Using cycles) Exec time: 11.192763 seconds
+Updated Matix Transpose(Using cycles) Exec time: 11.132307 seconds
+Matix Transpose in-place(Using Multithreaded) unoptimized Exec time: 10.509277 seconds
+Matix Transpose out-of-place (Multithreaded, cache-friendly) by blocks Exec time: 0.259242 seconds
+
+To Test Accuracy 
+Naive vs update mat transpose w/ cycles: equal 
+Naive vs multithreaded mat transpose(in-place): equal 
+Naive vs multithreaded mat transpose w/ blocks(out-of-place): equal 
+
+
+Matrix(row*col) - 10000*10496
+Matix Transpose(Using cycles) Exec time: 20.170496 seconds
+Updated Matix Transpose(Using cycles) Exec time: 20.108296 seconds
+Matix Transpose in-place(Using Multithreaded) unoptimized Exec time: 18.848799 seconds
+Matix Transpose out-of-place (Multithreaded, cache-friendly) by blocks Exec time: 0.515738 seconds
+
+To Test Accuracy 
+Naive vs update mat transpose w/ cycles: equal 
+Naive vs multithreaded mat transpose(in-place): equal 
+Naive vs multithreaded mat transpose w/ blocks(out-of-place): equal 
+
+
+Matrix(row*col) - 12512*12400
+Matix Transpose(Using cycles) Exec time: 34.708584 seconds
+Updated Matix Transpose(Using cycles) Exec time: 34.525250 seconds
+Matix Transpose in-place(Using Multithreaded) unoptimized Exec time: 33.001032 seconds
+Matix Transpose out-of-place (Multithreaded, cache-friendly) by blocks Exec time: 0.725049 seconds
+
+To Test Accuracy 
+Naive vs update mat transpose w/ cycles: equal 
+Naive vs multithreaded mat transpose(in-place): equal 
+Naive vs multithreaded mat transpose w/ blocks(out-of-place): equal 
+
+
+Matrix(row*col) - 15008*14912
+Matix Transpose(Using cycles) Exec time: 46.680742 seconds
+Updated Matix Transpose(Using cycles) Exec time: 46.427030 seconds
+Matix Transpose in-place(Using Multithreaded) unoptimized Exec time: 43.770436 seconds
+Matix Transpose out-of-place (Multithreaded, cache-friendly) by blocks Exec time: 1.052645 seconds
+
+To Test Accuracy 
+Naive vs update mat transpose w/ cycles: equal 
+Naive vs multithreaded mat transpose(in-place): equal 
+Naive vs multithreaded mat transpose w/ blocks(out-of-place): equal 
+
+
+Matrix(row*col) - 17504*16992
+Matix Transpose(Using cycles) Exec time: 74.254926 seconds
+Updated Matix Transpose(Using cycles) Exec time: 73.420791 seconds
+Matix Transpose in-place(Using Multithreaded) unoptimized Exec time: 70.890723 seconds
+Matix Transpose out-of-place (Multithreaded, cache-friendly) by blocks Exec time: 1.425321 seconds
+
+To Test Accuracy 
+Naive vs update mat transpose w/ cycles: equal 
+Naive vs multithreaded mat transpose(in-place): equal 
+Naive vs multithreaded mat transpose w/ blocks(out-of-place): equal 
+
+
+Matrix(row*col) - 20000*19008
+Matix Transpose(Using cycles) Exec time: 77.735795 seconds
+Updated Matix Transpose(Using cycles) Exec time: 77.503727 seconds
+Matix Transpose in-place(Using Multithreaded) unoptimized Exec time: 73.379305 seconds
+Matix Transpose out-of-place (Multithreaded, cache-friendly) by blocks Exec time: 2.101138 seconds
+
+To Test Accuracy 
+Naive vs update mat transpose w/ cycles: equal 
+Naive vs multithreaded mat transpose(in-place): equal 
+Naive vs multithreaded mat transpose w/ blocks(out-of-place): equal 
+
+
+mksriram@circinus-34 11:33:43 ~/cs242/hw2/maxsquare 
+$ 

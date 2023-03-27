@@ -1,0 +1,20 @@
+Matrix(row*col) - 1000*1000
+Naive Matix Transpose(Sequential) Exec time: 0.005823 seconds
+Matix Transpose(Sequential) Exec time: 0.004796 seconds
+Matix Transpose(Multithreaded) unoptimized out-of-place Exec time: 0.006370 seconds
+
+To Test Accuracy 
+Naive vs sequential mat transpose: equal 
+Naive vs multithreaded mat transpose: equal 
+
+
+Matrix(row*col) - 10000*7000
+Matix Transpose(Using cycles) Exec time: 14.221211 seconds
+Updated Matix Transpose(Using cycles) Exec time: 14.424494 seconds
+Matix Transpose in-place(Using Multithreaded) unoptimized Exec time: 13.658082 seconds
+Matix Transpose out-of-place (Multithreaded, cache-friendly) by blocks Exec time: 0.339980 seconds
+
+To Test Accuracy 
+Naive vs update mat transpose w/ cycles: equal 
+Naive vs multithreaded mat transpose(in-place): equal 
+Naive vs multithreaded mat transpose w/ blocks(out-of-place): equal 

@@ -1,0 +1,17 @@
+# Backups
+**/*~
+**/#*#
+
+# IDE specific
+.emacs*
+**/.idea/
+
+# Binaries
+**/*.o
+**/*.bin
+**/__pycache__
+
+# Benchmark data
+perf/
+bench/
+bench_v2/
