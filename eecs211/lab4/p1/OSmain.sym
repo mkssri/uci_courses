@@ -1,0 +1,14 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	SET_STAT_1        3000
+//	CHECK_2           3003
+//	CHECK_3           3006
+//	CHECK_4           3009
+//	CHECK_5           300C
+//	TRAP_HALT         300F
+//	a                 3010
+//	b                 3011
+//	Array             3012
+

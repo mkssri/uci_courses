@@ -1,0 +1,260 @@
+/* SUBMIT ONLY THIS FILE */
+/* NAME: ....... */
+/* UCI ID: .......*/
+
+// only include standard libraries.
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
+
+
+#define TOTAL_NO_OF_CYCLES (1000)
+#define EPSILON (0.0000001)
+
+
+double randNumberGenerator() {
+   /* return a uniformly distributed random value */
+   return (rand()/(1.0 + RAND_MAX));
+}
+
+int* generate_mean_procs(int procs, int mem_size) {
+    int *arr = (int *)malloc(sizeof(int) * procs);
+    for(int i = 0; i < procs; i++) {
+        arr[i] = (rand()/(1.0 + RAND_MAX)) * mem_size;
+    }
+    return arr;
+}
+
+
+
+int randN(int memnum, double mean) {
+   // return a normally distributed random value
+    double v1=randNumberGenerator();
+    double v2=randNumberGenerator();
+//    double number =cos(2*3.14*v2)*sqrt(-2.*log(v1));
+    double randN = cos(2 * 3.14 * v2)*sqrt(-2.0 *log(v1));
+    double sigma = memnum/6.0;
+    int x = fabs(randN*sigma+mean);
+    return x%memnum;
+}
+
+
+void simulate(double *each_mem_simulation_system_avg_wait_time, int max_no_of_memories, int number_of_processors, char dist){
+   
+    /*mem_system_simulation goes from 1 to 2048, depends on number of memory modules*/
+
+    int mem_system_simulation = 1, cycle_count = 1;
+    //TODO
+    // int mem_system_simulation = 240, cycle_count = 1;
+
+    int processors_access_denial_cnt_lst[number_of_processors];
+    int processors_state_lst[number_of_processors];
+    int *mean_proc;
+
+
+    int i,processor_num, memory,first_access_denied_processor_identified, first_acc_denied;
+
+    float prev_each_mem_simulation_system_avg_wait_time = 0;
+    float current_each_mem_simulation_system_avg_wait_time = 0;
+    float diff_btw_diff_simulations_avg_wait_time = 0;
+    float processors_avg_access_time_lst[number_of_processors]; 
+
+    /*mem_system_simulation 1 to 2048*/
+    for (mem_system_simulation = 1; mem_system_simulation <= max_no_of_memories; mem_system_simulation++){
+    // for (mem_system_simulation = 240; mem_system_simulation <= max_no_of_memories; mem_system_simulation++){
+    //TODO
+        /*
+            first_access_denied_processor_identified = 0/1
+            0 - Not identified yet in current cycle
+            1 - Already Identified in current cycle
+        */
+        first_access_denied_processor_identified = 0; i = 0;
+
+        int mem_state_lst[mem_system_simulation];
+        int spikes_cnt = 0;
+
+        /*
+            For every memory system simulation we are updating following buffers - 
+
+            #updating each element of list consisting of each processor access 
+            denail count for each system memory simulation  to 0
+
+            #updating each element of list consisting of each processor state 
+            to -1 (which meant processor is ready to go and connect to a memory module available)
+        */
+        
+        processor_num = 0;
+        while (processor_num < number_of_processors) {
+            processors_access_denial_cnt_lst[processor_num] = 0;
+            processors_state_lst[processor_num] = -1;
+            ++processor_num;
+        }
+
+        if(dist == 'n') {
+                mean_proc = generate_mean_procs(number_of_processors, mem_system_simulation);
+        }
+
+
+        for(cycle_count = 1; cycle_count <=TOTAL_NO_OF_CYCLES; ++cycle_count){
+            
+            /* Free Memory buffer before start of every cycle */
+            int mem_indx = 0;
+
+            while (mem_indx < mem_system_simulation){
+                mem_state_lst[mem_indx] = 0;
+                ++mem_indx;
+            }
+
+            if (first_access_denied_processor_identified == 1){
+                i = first_acc_denied;
+                first_access_denied_processor_identified = 0;
+            }
+
+            /*
+                In every cycle we are going through every processor
+                and processing them as per their current condition
+            */
+            int processor_count = 0;
+            while (processor_count < number_of_processors){
+
+                
+                /* 
+                    Type of distribution
+                    Normal - 'n'
+                    Uniform - 'u'
+                */
+                if (dist == 'u'){
+                    memory =  (rand()/(1.0 + RAND_MAX)) * mem_system_simulation;
+                }
+	            else if(dist == 'n'){
+                    // memory = randN((double)mean_proc[i], mem_system_simulation/6.0) % mem_system_simulation;
+                    memory = randN(mem_system_simulation,(double)mean_proc[i]);
+
+                }
+                
+
+                /*
+                    Processor ready to accept memory connection but needs to check if
+                    memory is free or not
+                */
+                if (processors_state_lst[i] == -1){
+                    
+                    /*
+                        Memory is free, So we mark memory as occupied now
+                    */
+                    if(mem_state_lst[memory] == 0){
+                        mem_state_lst[memory] = 1;
+                    }
+                    /*
+                        Memory is not free
+                    */
+                    else{
+                        /*
+                            Memory is not free, we check if Access denied first processor is identified
+                            or not. If already identified ignore, else catch the current i and mark it
+                            as first access denied processor. Next increment access denial cnt and mark
+                            processor state at current index with memory indx it wanted to get connected to..
+                        */
+                        if (first_access_denied_processor_identified == 0){
+                            first_acc_denied = i;
+                            first_access_denied_processor_identified = 1; //identified
+                        }
+                        processors_access_denial_cnt_lst[i]++;
+                        processors_state_lst[i] = memory;
+                    }
+                }
+                /*
+                    Processor not ready to accept memory connection but needs to check if
+                    memory is free or not
+                */
+                else{
+                    /*
+                        Following if gets executed in new cycle and it starts with first access denied 
+                        processor, if that memory is free which processor wants to access, allocate
+                        it to processor and mark memory is not free
+                    */
+                    if(mem_state_lst[processors_state_lst[i]] == 0){
+                        mem_state_lst[processors_state_lst[i]] = 1;
+                        processors_state_lst[i] = -1;
+                    }
+                    /*
+                        if memory which processor wants to access is not free -
+                        then increment processor access denial counter, next see if it is
+                        first access denail counter,if not ignore else catch it and tag it
+                    */
+                    else{
+                        if(first_access_denied_processor_identified == 0){
+                            first_acc_denied = i;
+                            first_access_denied_processor_identified = 1;
+                        }
+                        processors_access_denial_cnt_lst[i]++;
+                    }
+                }
+                ++processor_count;
+                i = (i+1)%number_of_processors;
+
+            }
+            /*
+                Condition to break out of memory cycles if access times difference does not vary 
+                more EPSILON
+            */
+
+            processor_num = 0;
+            int compute_avg_access_time=0;
+
+
+            while(processor_num < number_of_processors){
+
+                if((cycle_count - processors_access_denial_cnt_lst[processor_num]) == 0){
+                    break;
+                }
+
+                if (processor_num == number_of_processors-1){
+                    compute_avg_access_time = 1;
+                }
+
+                ++processor_num;
+            }
+
+            if (compute_avg_access_time == 1){
+
+                /*
+                    Processors access time's to memory computations/summation
+                */
+                processor_num = 0;
+                float processors_access_times_summation = 0;
+
+                while(processor_num < number_of_processors){
+
+                    processors_avg_access_time_lst[processor_num] = 
+                    cycle_count / (cycle_count - processors_access_denial_cnt_lst[processor_num]);
+                    
+                    processors_access_times_summation += processors_avg_access_time_lst[processor_num];
+                    ++processor_num;
+                }
+
+                current_each_mem_simulation_system_avg_wait_time = 
+                processors_access_times_summation / number_of_processors;
+
+                diff_btw_diff_simulations_avg_wait_time = 
+                fabs(prev_each_mem_simulation_system_avg_wait_time - current_each_mem_simulation_system_avg_wait_time);
+
+                if(diff_btw_diff_simulations_avg_wait_time <= EPSILON){
+                
+                    each_mem_simulation_system_avg_wait_time[mem_system_simulation-1] = 
+                    current_each_mem_simulation_system_avg_wait_time;
+
+                    break;
+                    
+                }
+
+                prev_each_mem_simulation_system_avg_wait_time = current_each_mem_simulation_system_avg_wait_time;
+                processors_access_times_summation = 0;
+
+            }    
+            
+        }         
+    }
+    
+}

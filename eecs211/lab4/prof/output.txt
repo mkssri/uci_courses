@@ -1,0 +1,39 @@
+Regarding the correct outputs for your dump files, we are looking into four variables: R1, M[xFE04], M[xFE06], and x0200.
+
+# Hexadecimal: FE04, Decimal: 65028
+# Hexadecimal: FE06, Decimal: 65030
+# Hexadecimal: 200, Decimal: 512
+
+For problem 1: (only 12 dump files are enough for grading)
+dump_file1: R1=0, M[x0200]=1, M[xFE04]=1
+dump_file2: R1=0, M[x0200]=2, M[xFE04]=0
+dump_file3: R1=1, M[x0200]=2, M[xFE04]=0
+dump_file4: R1=1, M[x0200]=1, M[xFE04]=1
+dump_file5: R1=1, M[x0200]=1, M[xFE04]=0
+dump_file6: R1=2, M[x0200]=1, M[xFE04]=0
+dump_file7: R1=2, M[x0200]=2, M[xFE04]=1
+dump_file8: R1=2, M[x0200]=0, M[xFE04]=0
+dump_file9: R1=3, M[x0200]=0, M[xFE04]=0
+dump_file10: R1=3, M[x0200]=3, M[xFE04]=1
+dump_file11: R1=3, M[x0200]=3, M[xFE04]=0
+dump_file12: R1=4, M[x0200]=3, M[xFE04]=0
+
+
+For problem 2: (only 11 dump files are enough for grading)
+dump_file1: R1=0, M[x0200]=1, M[xFE04]=1, M[xFE06]=1
+dump_file2: R1=0, M[x0200]=2, M[xFE04]=0, M[xFE06]=2
+dump_file3: R1=1, M[x0200]=2, M[xFE04]=1, M[xFE06]=2
+dump_file4: R1=1, M[x0200]=0, M[xFE04]=0, M[xFE06]=3
+dump_file5: R1=2, M[x0200]=0, M[xFE04]=1, M[xFE06]=3
+dump_file6: R1=2, M[x0200]=0, M[xFE04]=0, M[xFE06]=4
+dump_file7: R1=3, M[x0200]=0, M[xFE04]=1, M[xFE06]=4
+dump_file8: R1=3, M[x0200]=0, M[xFE04]=0, M[xFE06]=5
+dump_file9: R1=4, M[x0200]=0, M[xFE04]=1, M[xFE06]=5
+dump_file10: R1=4, M[x0200]=0, M[xFE04]=0, M[xFE06]=6
+dump_file11: R1=5, M[x0200]=0, M[xFE04]=1, M[xFE06]=6
+
+
+Some clarifications regarding lab 4:
+For problem 1: When we are on kernel mode, we are allowed to write to the MR_SM only if the value we are writing is zero, otherwise (any other value), the VM should refuse and dump the memory into a file.
+
+For problem 2: When MR_SM has a value of 1, we are allowed to write/read from any location of memory.

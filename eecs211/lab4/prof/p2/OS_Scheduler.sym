@@ -1,0 +1,36 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	UPDATE_MR_MPU     0300
+//	CHECK_RUNNING_TOP  0303
+//	CHECK_RUNNING_NEXT  0305
+//	CHECK_IF_NEXT_INST_RUNNING  0314
+//	DO_TOP_READY      031C
+//	RUN_1st           032A
+//	RUN_2nd           033C
+//	RUN_3rd           034E
+//	RUN_4th           0360
+//	RUN_5th           0372
+//	CHECK_RUNNING     0384
+//	CHECK_NEXT_INST   0392
+//	FINAL             039A
+//	i                 039E
+//	j                 039F
+//	zero              03A0
+//	one               03A1
+//	two               03A2
+//	three             03A3
+//	four              03A4
+//	five              03A5
+//	six               03A6
+//	ARRAYSIZE         03A7
+//	S_Array           03A8
+//	inst1             03A9
+//	inst2             03AA
+//	inst3             03AB
+//	inst4             03AC
+//	inst5             03AD
+//	MR_SM             03AE
+//	MR_MPU            03AF
+

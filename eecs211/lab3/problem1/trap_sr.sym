@@ -1,0 +1,22 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	SCHEDULER         0103
+//	Loop              011D
+//	JUMP_TO_PROCESS1  011E
+//	JUMP_TO_PROCESS2  0127
+//	JUMP_TO_PROCESS3  0130
+//	JUMP_TO_PROCESS4  0139
+//	JUMP_TO_PROCESS5  0142
+//	P1_STATUS         014B
+//	P2_STATUS         014C
+//	P3_STATUS         014D
+//	P4_STATUS         014E
+//	P5_STATUS         014F
+//	P1_ADDR_LABEL     0150
+//	P2_ADDR_LABEL     0151
+//	P3_ADDR_LABEL     0152
+//	P4_ADDR_LABEL     0153
+//	P5_ADDR_LABEL     0154
+

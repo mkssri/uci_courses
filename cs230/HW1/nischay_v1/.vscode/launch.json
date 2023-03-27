@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [
+        ""
+      ],
+      "stopAtEntry": true,
+      "cwd": "/Users/mksriram/Documents/11_Learnings/36-UNI/universities/UCI/UCI-2021/02_CourseWork/36_Coursework/02_Winter_2022/04_CompSci_230/02_Hw/01_Hw1/nischay_v1",
+      "environment": [],
+      "program": "/Users/mksriram/Documents/11_Learnings/36-UNI/universities/UCI/UCI-2021/02_CourseWork/36_Coursework/02_Winter_2022/04_CompSci_230/02_Hw/01_Hw1/nischay_v1/build/Debug/outDebug",
+      "internalConsoleOptions": "openOnSessionStart",
+      "MIMode": "lldb",
+      "externalConsole": false
+    }
+  ]
+}

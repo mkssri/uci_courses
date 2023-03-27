@@ -1,0 +1,7 @@
+.ORIG x100
+TRAP xFF
+LD R3, L1
+JMP R3
+L1: .FILL x4000
+L3: BRnzp L3
+.END
