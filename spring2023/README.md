@@ -10,3 +10,6 @@
     * ICS2 162
 -   CompSci   295     BRAIN-INSPIRED LRNG - Th: 5:00- 7:50p
     * RH190
+- CompSci   142A     COMPILERS&INTPRETER - C:TuTh:   8:00- 9:20, D:F F  1:00- 1:50p.
+    * RH104
+    * ICS174
